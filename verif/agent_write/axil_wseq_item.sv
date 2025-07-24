@@ -5,8 +5,8 @@ class axil_wseq_item extends uvm_sequence_item;
   rand bit [           2:0] arprot;
 
   // Write Data
-  rand bit [DATA_WIDTH-1:0] wdata;
-  rand bit [STRB_WIDTH-1:0] wstrb;
+  rand bit [DATA_WIDTH-1:0] wdata  [$];
+  rand bit [STRB_WIDTH-1:0] wstrb  [$];
 
   // Write Response
   bit      [           1:0] bresp;

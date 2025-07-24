@@ -5,8 +5,8 @@ class axil_rseq_item extends uvm_sequence_item;
   rand bit [           2:0] arprot;
 
   // Read Response
-  bit      [DATA_WIDTH-1:0] rdata;
-  bit      [           1:0] rresp;
+  bit      [DATA_WIDTH-1:0] rdata  [$];
+  bit      [           1:0] rresp  [$];
 
   `uvm_object_utils_begin(axil_rseq_item)
     `uvm_field_int(araddr, UVM_ALL_ON)

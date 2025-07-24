@@ -1,0 +1,15 @@
+verif:
+  - ../rtl/axil_intf.sv
+  - common/axil_sqr.sv
+  - agent_read/axil_rseq_item.sv
+  - agent_read/axil_rdrv.sv
+  - agent_read/axil_ragent.sv
+  - agent_write/axil_wseq_item.sv
+  - agent_write/axil_wdrv.sv
+  - agent_write/axil_wagent.sv
+  - common/axil_mon.sv
+  - common/axil_sbd.sv
+  - common/axil_env.sv
+  - common/axil_base_seq.sv
+  - common/axil_base_test.sv
+  - tb_top.sv
