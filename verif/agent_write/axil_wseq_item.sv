@@ -2,11 +2,11 @@ class axil_wseq_item extends uvm_sequence_item;
 
   // Write Address
   rand bit [ADDR_WIDTH-1:0] awaddr;
-  rand bit [           2:0] arprot;
+  rand bit [           2:0] awprot;
 
   // Write Data
-  rand bit [DATA_WIDTH-1:0] wdata  [$];
-  rand bit [STRB_WIDTH-1:0] wstrb  [$];
+  rand bit [DATA_WIDTH-1:0] wdata;
+  rand bit [STRB_WIDTH-1:0] wstrb;
 
   // Write Response
   bit      [           1:0] bresp;

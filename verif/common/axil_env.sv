@@ -3,7 +3,6 @@ class axil_env extends uvm_env;
   axil_ragent ragent;
   axil_wagent wagent;
   axil_sbd sbd;
-  axil_mon mon;
 
   `uvm_component_utils(axil_env)
 
@@ -11,12 +10,17 @@ class axil_env extends uvm_env;
     super.new(name, parent);
   endfunction
 
-  function void build_phase(uvm_phase phase);
+  virtual function void build_phase(uvm_phase phase);
     super.build_phase(phase);
     ragent = axil_ragent::type_id::create("ragent", this);
     wagent = axil_wagent::type_id::create("wagent", this);
     sbd = axil_sbd::type_id::create("sbd", this);
-    mon = axil_mon::type_id::create("mon", this);
+  endfunction
+
+  virtual function void connect_phase(uvm_phase phase);
+    super.connect_phase(phase);
+    ragent.mon.analysis_port.connect(sbd.rxp);
+    wagent.mon.analysis_port.connect(sbd.wxp);
   endfunction
 
 endclass

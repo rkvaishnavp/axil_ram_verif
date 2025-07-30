@@ -25,6 +25,4 @@ class axil_sbd extends uvm_scoreboard;
     read_fifo  = new("read_fifo", this);
   endfunction
 
-  function 
-
 endclass
