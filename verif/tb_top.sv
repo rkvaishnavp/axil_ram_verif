@@ -8,9 +8,13 @@ module tb_top;
   import axil_pkg::*;
 
   logic clk, rst;
-  axil_intf #(DATA_WIDTH, ADDR_WIDTH, STRB_WIDTH) pif (
-      clk,
-      rst
+  axil_intf #(
+      .DATA_WIDTH(DATA_WIDTH),
+      .ADDR_WIDTH(ADDR_WIDTH),
+      .STRB_WIDTH(STRB_WIDTH)
+  ) pif (
+      .clk(clk),
+      .rst(rst)
   );
 
   axil_ram_wrap #(
@@ -34,6 +38,7 @@ module tb_top;
 
   initial begin
     run_test("axil_wr_rd_test");
+    $finish();
   end
 
 endmodule

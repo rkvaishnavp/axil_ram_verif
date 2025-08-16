@@ -13,4 +13,8 @@ class axil_base_test extends uvm_test;
     env = axil_env::type_id::create("env", this);
   endfunction
 
+  virtual function void end_of_elaboration_phase(uvm_phase phase);
+    uvm_top.print_topology();
+  endfunction
+
 endclass

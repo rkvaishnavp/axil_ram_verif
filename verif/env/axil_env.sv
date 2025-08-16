@@ -3,6 +3,7 @@ class axil_env extends uvm_env;
   axil_ragent ragent;
   axil_wagent wagent;
   axil_sbd sbd;
+  axil_vsqr vsqr;
 
   `uvm_component_utils(axil_env)
 
@@ -21,6 +22,8 @@ class axil_env extends uvm_env;
     super.connect_phase(phase);
     ragent.mon.analysis_port.connect(sbd.rxp);
     wagent.mon.analysis_port.connect(sbd.wxp);
+    vsqr.wsqr = wagent.sqr;
+    vsqr.rsqr = ragent.sqr;
   endfunction
 
 endclass
